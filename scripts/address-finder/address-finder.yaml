@@ -9,16 +9,13 @@ spec:
   selector:
     matchLabels:
       app: jarvis-address-finder-application
-      name: jarvis-address-finder-application
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
         app: jarvis-address-finder-application
     spec:
       containers:
-        name: jarvis-address-finder-application
+      - name: jarvis-address-finder-application
         image: victorsantoss/jarvis-address-finder-application
         imagePullPolicy: Always
         ports:
