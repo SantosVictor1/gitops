@@ -24,7 +24,7 @@ spec:
         livenessProbe:
           failureThreshold: 3
           httpGet:
-            path: /actuator/health
+            path: /jarvisaddressfinder/actuator/health
             port: 8080
             scheme: HTTP
           initialDelaySeconds: 30
