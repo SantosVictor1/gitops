@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jarvis-address-finder-application
+  name: jarvis-address-finder-application
+  namespace: microservices
+spec:
+  selector:
+    matchLabels:
+      app: jarvis-address-finder-application
+      name: jarvis-address-finder-application
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: jarvis-address-finder-application
+    spec:
+      containers:
+        name: jarvis-address-finder-application
+        image: victorsantoss/jarvis-address-finder-application
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          protocol: TCP

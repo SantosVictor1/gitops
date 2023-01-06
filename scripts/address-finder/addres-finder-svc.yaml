@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jarvis-address-finder-applications
+  namespace: microservices
+spec:
+  ports:
+  - name: http-port
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: jarvis-address-finder-applications
+  type: ClusterIP
